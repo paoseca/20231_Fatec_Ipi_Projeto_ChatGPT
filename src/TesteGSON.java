@@ -3,7 +3,7 @@ import com.google.gson.Gson;
 public class TesteGSON {
   public static void main(String[] args) {
     var chatGPTRequest = new ChatGPTRequest(
-      "text-davinci-003", "Por que o céu é azul?", 150
+      "text-davinci-003", "Por que o céu é azul?", 150, 0
     );
     var gson = new Gson();
     String json = gson.toJson(chatGPTRequest);

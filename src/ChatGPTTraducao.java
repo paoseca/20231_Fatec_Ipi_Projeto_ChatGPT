@@ -6,35 +6,24 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
-public class ChatGPTClient {
-  public String criarPergunta(
+public class ChatGPTTraducao {
+  public String traduzirTexto(
     String OPENAI_API_KEY,
-    String assunto,
-    String tipo,
-    String dificuldade,
-    String perguntaExemplo
+    String texto
   ) throws Exception{
     //montar o prompt
     //text block(Java 15+)
     String prompt = 
     """
-      Elabore uma questão sobre %s.
-      Do tipo %s%s.
-      Nível de dificuldade %s.
-      %s%s
+      Elabore duas tradução sobre %s
     """.formatted(
-      assunto,
-      tipo,
-      tipo.equalsIgnoreCase("alternativa") ? 
-      " com 4 alternativas" : "",
-      dificuldade,
-      perguntaExemplo == null ? "" : "Use a seguinte pergunta como exemplo: ",
-      perguntaExemplo == null ? "" : perguntaExemplo
+      texto
     );
     var requisicao = new ChatGPTRequest(
       "text-davinci-003",
       prompt,
-      100, 0
+      100,
+      2
     );
 
     var gson = new Gson();

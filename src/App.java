@@ -1,6 +1,5 @@
 import java.io.FileInputStream;
 import java.util.Properties;
-
 import javax.swing.JOptionPane;
 
 public class App {
@@ -24,7 +23,7 @@ public class App {
             assunto, 
             tipo, 
             dificuldade,
-             null
+            null
         );
         //e exibir
         JOptionPane.showMessageDialog(null, s);
