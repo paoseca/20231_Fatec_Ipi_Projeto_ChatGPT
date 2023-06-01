@@ -15,7 +15,7 @@ public class ChatGPTTraducao {
     //text block(Java 15+)
     String prompt = 
     """
-      Elabore duas tradução sobre %s
+      Elabore duas traduções sobre %s
     """.formatted(
       texto
     );
